@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Soyod Ahmed | Cybersecurity Student &amp; Aspiring Full Stack Developer</title>
+<meta name="description" content="Portfolio of Soyod Ahmed, a 3rd-year Cybersecurity student at IIUM building toward a career as a Full Stack Developer with Python, Django and React.">
+<meta property="og:title" content="Soyod Ahmed | Cybersecurity Student &amp; Aspiring Full Stack Developer">
+<meta property="og:description" content="Python, Django and React projects from an IIUM Cybersecurity student.">
+<meta name="theme-color" content="#0B1120">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=DM+Sans:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script id="tw-config">
+tailwind.config = { theme: { extend: {
+  colors: { bg: '#0B1120', panel: '#111827', accent: '#38BDF8', violet: '#A78BFA', ink: '#F8FAFC', mute: '#94A3B8' },
+  fontFamily: { head: ['"Space Grotesk"', 'system-ui', 'sans-serif'], body: ['"DM Sans"', 'system-ui', 'sans-serif'], mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'] }
+} } };
+</script>
+<style id="base-css">
+  :root { color-scheme: dark; box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; background: #0B1120; }
+  body { background: #0B1120; color: #F8FAFC; font-family: 'DM Sans', system-ui, sans-serif; }
+  .grid-bg { background-image: linear-gradient(rgba(56,189,248,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,.05) 1px, transparent 1px); background-size: 44px 44px; -webkit-mask-image: radial-gradient(ellipse at 70% 30%, #000 0%, transparent 70%); mask-image: radial-gradient(ellipse at 70% 30%, #000 0%, transparent 70%); }
+  .caret { display: inline-block; width: .55ch; height: 1.1em; background: #38BDF8; vertical-align: -.15em; margin-left: 2px; animation: blink 1.1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .card { position: relative; background: #111827; border: 1px solid rgba(148,163,184,.14); border-radius: 14px; transition: border-color .2s, transform .2s, box-shadow .25s; }
+  .card::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .25s; background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(56,189,248,.13), transparent 60%); }
+  .card:hover::before { opacity: 1; }
+  .anim [data-r], .anim .card { opacity: 0; translate: 0 28px; transition: opacity .7s ease, translate .7s cubic-bezier(.2,.7,.2,1), border-color .2s, transform .2s, box-shadow .25s; }
+  .anim [data-r][data-in], .anim .card[data-in] { opacity: 1; translate: 0 0; }
+  .anim .rise { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(22px); } }
+  .blob { position: absolute; border-radius: 9999px; filter: blur(70px); opacity: .32; animation: drift 14s ease-in-out infinite alternate; }
+  @keyframes drift { to { transform: translate(40px, 30px) scale(1.15); } }
+  .float { animation: float 7s ease-in-out infinite; }
+  @keyframes float { 50% { transform: translateY(-8px); } }
+  .scan { overflow: hidden; }
+  .scan::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; pointer-events: none; background: linear-gradient(90deg, transparent, rgba(56,189,248,.55), transparent); animation: scan 5s linear infinite; }
+  @keyframes scan { from { top: -2px; } to { top: 100%; } }
+  .flow { background-size: 220% 220%; animation: flow 9s ease infinite; }
+  @keyframes flow { 50% { background-position: 100% 100%; } }
+  .cursor-glow { position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(520px circle at var(--gx, 60%) var(--gy, 25%), rgba(56,189,248,.07), transparent 60%); }
+  .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+  .marquee-track { animation: marq 45s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  @keyframes marq { to { transform: translateX(-50%); } }
+  .card:hover { border-color: rgba(56,189,248,.45); transform: translateY(-2px); box-shadow: 0 18px 50px -22px rgba(56,189,248,.4); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #38BDF8; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .caret, .blob, .float, .flow, .scan::after, .marquee-track, .animate-ping { animation: none; } .card { transition: none; } .card:hover { transform: none; } }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script id="site-data" type="application/json">{"config":{"github":"","linkedin":"https://www.linkedin.com/in/soyod-ahmed-2a64522bb","email":"soyodahmed372@gmail.com","cv":"/_blob/7c04806eaf3b5009ace33ab1cdfd6e07","formEndpoint":""},"projects":[{"title":"Student Time and Money Management App","status":"In progress","desc":"A student-focused app for managing schedules, expenses and budgets in one place.","problem":"Student interviews, field observation and empathy mapping showed students struggle to balance academic schedules and personal budgets.","solution":"A unified app concept combining schedule tracking, expense logging and budget alerts, now moving into prototypes.","features":["Class schedule tracking","Expense logging","Monthly budget alerts"],"tech":["To be confirmed"],"github":"","demo":""},{"title":"Student Management System","status":"In progress","desc":"A centralized Django web application for managing student profiles, course enrollments and academic records.","tech":["Python","Django","PostgreSQL"],"github":"","demo":""},{"title":"Expense Tracker","status":"In progress","desc":"A personal finance web application to record daily income, categorize expenses and generate financial summaries.","tech":["Python","Django","SQL"],"github":"","demo":""},{"title":"E-commerce Web Application","status":"Planned","desc":"A full-stack shopping platform with authentication, products, cart and order management.","tech":["Django REST Framework","React","PostgreSQL"],"github":"","demo":""},{"title":"Cybersecurity Project","status":"Placeholder","desc":"A project demonstrating cybersecurity knowledge or secure application development. Details to be added.","tech":["To be added"],"github":"","demo":""}],"skills":[["Programming",["Python","JavaScript (Complete )"]],["Frontend",["HTML5","CSS3","JavaScript (Learning)","React (Learning)"]],["Backend",["Django","Django REST Framework (Learning)"]],["Database",["SQL","PostgreSQL (Learning)"]],["CS Fundamentals",["Object-Oriented Programming","Data Structures and Algorithms (Learning)","Problem Solving"]],["Tools",["Git","GitHub","VS Code","Postman"]],["Cybersecurity",["Cybersecurity Fundamentals","Cyber Risk Management","Security Awareness","Ethical Hacking (Learning)","Secure Application Development (Learning)"]]],"steps":[["Python Programming","completed"],["Object-Oriented Programming","completed"],["Data Structures and Algorithms","learning"],["HTML, CSS and JavaScript","learning"],["React","learning"],["Django","learning"],["Django REST Framework","learning"],["PostgreSQL","learning"],["Git and GitHub","completed"],["Full Stack Projects","planned"],["Deployment and Portfolio Development","planned"]],"ach":[{"t":"Certification","d":"[Add title, issuer and year once verified]"},{"t":"Academic achievement","d":"[Add title, issuer and year once verified]"},{"t":"Workshop","d":"[Add title, issuer and year once verified]"},{"t":"Training","d":"[Add title, issuer and year once verified]"}]}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+<script type="text/babel" id="app-src">
+const { useState, useEffect } = React;
+
+/* ============ EDIT ME: replace empty strings with your real links ============ */
+let CONFIG = {
+  name: "Soyod Ahmed",
+  role: "Aspiring Junior Software Developer | Full Stack Developer Intern (Python & Cybersecurity)",
+  location: "Malaysia",
+  phone: "+60173724930",
+  github: "", // Add your GitHub profile URL (e.g., "https://github.com/yourusername")
+  linkedin: "https://www.linkedin.com/in/soyod-ahmed-2a64522bb",
+  email: "soyodahmed372@gmail.com",
+  cv: "Soyod_Ahmed_Software_Developer_CV.pdf", // Update if hosted under a different path/filename
+  formEndpoint: "YOUR_ENDPOINT_HERE", // Paste your Formspree URL here (https://formspree.io/f/xxxxxxxx), or use Admin > Links
+};
+
+let PROJECTS = [
+  { title: "Student Time and Money Management App", status: "In progress",
+    desc: "A student-focused app for managing schedules, expenses and budgets in one place.",
+    problem: "Student interviews, field observation and empathy mapping showed students struggle to balance academic schedules and personal budgets.",
+    solution: "A unified app concept combining schedule tracking, expense logging and budget alerts, now moving into prototypes.",
+    features: ["Class schedule tracking", "Expense logging", "Monthly budget alerts"],
+    tech: ["To be confirmed"], github: "", demo: "" },
+  { title: "Student Management System", status: "In progress",
+    desc: "A centralized Django web application for managing student profiles, course enrollments and academic records.",
+    tech: ["Python", "Django", "PostgreSQL"], github: "", demo: "" },
+  { title: "Expense Tracker", status: "In progress",
+    desc: "A personal finance web application to record daily income, categorize expenses and generate financial summaries.",
+    tech: ["Python", "Django", "SQL"], github: "", demo: "" },
+  { title: "E-commerce Web Application", status: "Planned",
+    desc: "A full-stack shopping platform with authentication, products, cart and order management.",
+    tech: ["Django REST Framework", "React", "PostgreSQL"], github: "", demo: "" },
+  { title: "Cybersecurity Project", status: "Placeholder",
+    desc: "A project demonstrating cybersecurity knowledge or secure application development. Details to be added.",
+    tech: ["To be added"], github: "", demo: "" },
+];
+
+let SKILLS = [
+  ["Programming", ["Python", "JavaScript (Learning)"]],
+  ["Frontend", ["HTML5", "CSS3", "JavaScript (Learning)", "React (Learning)"]],
+  ["Backend", ["Django", "Django REST Framework (Learning)"]],
+  ["Database", ["SQL", "PostgreSQL (Learning)"]],
+  ["CS Fundamentals", ["Object-Oriented Programming", "Data Structures and Algorithms (Learning)", "Problem Solving"]],
+  ["Tools", ["Git", "GitHub", "VS Code", "Postman"]],
+  ["Cybersecurity", ["Cybersecurity Fundamentals", "Cyber Risk Management", "Security Awareness", "Ethical Hacking (Learning)", "Secure Application Development (Learning)"]],
+];
+
+let STEPS = [
+  ["Python Programming", "completed"], ["Object-Oriented Programming", "completed"],
+  ["Data Structures and Algorithms", "learning"], ["HTML, CSS and JavaScript", "learning"],
+  ["React", "learning"], ["Django", "learning"], ["Django REST Framework", "learning"],
+  ["PostgreSQL", "learning"], ["Git and GitHub", "completed"],
+  ["Full Stack Projects", "planned"], ["Deployment and Portfolio Development", "planned"],
+];
+let ACH = [
+  { t: "Certification", d: "[Add title, issuer and year once verified]" },
+  { t: "Academic achievement", d: "[Add title, issuer and year once verified]" },
+  { t: "Workshop", d: "[Add title, issuer and year once verified]" },
+  { t: "Training", d: "[Add title, issuer and year once verified]" },
+];
+try {
+  const SAVED = JSON.parse(document.getElementById("site-data").textContent);
+  if (SAVED) { CONFIG = SAVED.config || CONFIG; PROJECTS = SAVED.projects || PROJECTS; SKILLS = SAVED.skills || SKILLS; STEPS = SAVED.steps || STEPS; ACH = SAVED.ach || ACH; }
+} catch (e) {}
+const STATUS = {
+  completed: { label: "Completed", dot: "bg-accent", ring: "border-accent/60" },
+  learning: { label: "Learning", dot: "bg-violet", ring: "border-violet/60" },
+  planned: { label: "Planned", dot: "bg-mute/50", ring: "border-mute/30" },
+};
+const ORDER = ["completed", "learning", "planned"];
+
+const P = {
+  github: "M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4M9 18c-4.51 2-5-2-7-2",
+  linkedin: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z",
+  mail: "M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM22 7l-10 7L2 7",
+  menu: "M4 6h16M4 12h16M4 18h16", x: "M18 6 6 18M6 6l12 12",
+  shield: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+  download: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3",
+  up: "M12 19V5M5 12l7-7 7 7", send: "M22 2 11 13M22 2l-7 20-4-9-9-4z", code: "M16 18l6-6-6-6M8 6l-6 6 6 6",
+  user: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z",
+  award: "M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM8.2 13.9 7 23l5-3 5 3-1.2-9.1",
+};
+const Icon = ({ n, s = 18 }) => (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={P[n]} /></svg>
+);
+
+const Btn = ({ href, icon, children, primary, ext = true }) => {
+  const base = "inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 ";
+  const look = primary ? "bg-accent text-bg hover:-translate-y-0.5 hover:bg-sky-300 hover:shadow-[0_0_26px_rgba(56,189,248,.5)]" : "border border-mute/30 text-ink hover:-translate-y-0.5 hover:border-accent hover:bg-accent/10 hover:text-accent";
+  if (!href) return (
+    <span role="link" aria-disabled="true" title="Link not added yet. Set it in CONFIG." className={base + "opacity-45 cursor-not-allowed " + (primary ? "bg-accent/60 text-bg" : "border border-mute/30 text-mute")}>
+      {icon && <Icon n={icon} s={16} />}{children}</span>
+  );
+  return <a href={href} {...(ext ? { target: "_blank", rel: "noopener noreferrer" } : {})} className={base + look}>{icon && <Icon n={icon} s={16} />}{children}</a>;
+};
+
+const Section = ({ id, title, lead, children }) => (
+  <section id={id} className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+    <h2 data-r className="font-head text-3xl font-bold sm:text-4xl">{title}</h2>
+    <div data-r className="mt-3 h-1 w-14 rounded-full bg-gradient-to-r from-accent to-violet" />
+    {lead && <p data-r className="mt-4 max-w-xl text-mute">{lead}</p>}
+    <div className="mt-10">{children}</div>
+  </section>
+);
+
+const LINKS = [["about", "About"], ["skills", "Skills"], ["projects", "Projects"], ["education", "Education"], ["journey", "Journey"], ["achievements", "Achievements"], ["contact", "Contact"]];
+
+function Nav() {
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+  useEffect(() => {
+    const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && setActive(e.target.id)), { rootMargin: "-45% 0px -50% 0px" });
+    LINKS.forEach(([id]) => { const el = document.getElementById(id); el && io.observe(el); });
+    return () => io.disconnect();
+  }, []);
+  return (
+    <header className="sticky z-40 border-b border-mute/10 bg-bg/85 backdrop-blur" style={{ top: "env(safe-area-inset-top, 0px)" }}>
+      <div id="bar" aria-hidden="true" className="absolute bottom-0 left-0 h-px w-full origin-left bg-gradient-to-r from-accent to-violet" style={{ transform: "scaleX(0)" }} />
+      <nav aria-label="Primary" className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+        <a href="#top" className="flex items-center gap-2 font-head font-bold"><span className="text-accent"><Icon n="shield" /></span>Soyod Ahmed</a>
+        <ul className="hidden items-center gap-6 text-sm text-mute md:flex">
+          {LINKS.map(([id, l]) => <li key={id}><a className={"relative transition-colors hover:text-accent after:absolute after:-bottom-1.5 after:left-0 after:h-px after:bg-accent after:transition-all after:duration-300 " + (active === id ? "text-accent after:w-full" : "after:w-0")} href={"#" + id}>{l}</a></li>)}
+        </ul>
+        <button className="rounded-md p-2 text-ink md:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}><Icon n={open ? "x" : "menu"} s={22} /></button>
+      </nav>
+      {open && <ul className="border-t border-mute/10 bg-bg px-5 py-3 md:hidden">
+        {LINKS.map(([id, l]) => <li key={id}><a onClick={() => setOpen(false)} className="block py-2.5 text-mute hover:text-accent" href={"#" + id}>{l}</a></li>)}
+      </ul>}
+    </header>
+  );
+}
+
+const ROLES = ["Full Stack Developer", "Python Developer", "Cybersecurity Enthusiast"];
+function useTyping() {
+  const [i, setI] = useState(0), [t, setT] = useState(""), [del, setDel] = useState(false);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setT(ROLES[0]); return; }
+    const w = ROLES[i];
+    const id = setTimeout(() => {
+      if (!del && t === w) return setDel(true);
+      if (del && t === "") { setDel(false); return setI((i + 1) % ROLES.length); }
+      setT(del ? w.slice(0, t.length - 1) : w.slice(0, t.length + 1));
+    }, !del && t === w ? 1400 : del ? 35 : 70);
+    return () => clearTimeout(id);
+  }, [t, del, i]);
+  return t;
+}
+
+function Decrypt({ text }) {
+  const [t, setT] = useState(text);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const set = "ABCDEF0123456789#$%&*<>/"; let f = 0;
+    const id = setInterval(() => {
+      f++; const k = Math.floor(f / 3);
+      if (k >= text.length) { clearInterval(id); setT(text); return; }
+      setT(text.split("").map((c, i) => (c === " " || i < k ? c : set[Math.floor(Math.random() * set.length)])).join(""));
+    }, 40);
+    return () => clearInterval(id);
+  }, [text]);
+  return <><span className="sr-only">{text}</span><span aria-hidden="true">{t}</span></>;
+}
+
+function Marquee() {
+  const names = Array.from(new Set(SKILLS.flatMap(s => s[1]).map(x => x.replace(" (Learning)", ""))));
+  const row = names.concat(names);
+  return (
+    <div className="marquee border-y border-mute/10 bg-panel/40 py-4" aria-hidden="true">
+      <div className="marquee-track flex w-max gap-10 font-mono text-sm text-mute">
+        {row.map((n, i) => <span key={i} className="flex items-center gap-10">{n}<span className="text-accent/50">/</span></span>)}
+      </div>
+    </div>
+  );
+}
+
+function Hero() {
+  const typed = useTyping();
+  return (
+    <section id="top" className="relative overflow-hidden">
+      <div className="grid-bg absolute inset-0" aria-hidden="true" />
+      <div className="blob -right-10 top-10 h-72 w-72 bg-accent/60" aria-hidden="true" />
+      <div className="blob left-1/3 top-52 h-64 w-64 bg-violet/50" style={{ animationDelay: "-6s" }} aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-16 sm:pt-24 lg:grid-cols-[1.15fr_.85fr]">
+        <div>
+          <h1 className="rise bg-gradient-to-r from-ink via-ink to-accent bg-clip-text font-head text-4xl font-bold leading-tight text-transparent sm:text-6xl"><Decrypt text="Hi, I’m Soyod Ahmed" /></h1>
+          <p className="rise mt-4 font-head text-xl text-accent sm:text-2xl" style={{ animationDelay: ".12s" }}>Cybersecurity Student | Aspiring Full Stack Developer</p>
+          <p className="rise mt-6 max-w-xl text-lg leading-relaxed text-mute" style={{ animationDelay: ".24s" }}>I’m a 3rd-year Cybersecurity student at International Islamic University Malaysia (IIUM), passionate about building modern web applications and exploring the intersection of software development and cybersecurity.</p>
+          <div className="rise mt-8 flex flex-wrap gap-3" style={{ animationDelay: ".36s" }}>
+            <Btn primary ext={false} href="#projects">View My Projects</Btn>
+            <Btn icon="download" href={CONFIG.cv}>Download CV</Btn>
+            <Btn ext={false} href="#contact">Contact Me</Btn>
+          </div>
+          <div className="rise mt-6 flex gap-2" style={{ animationDelay: ".48s" }}>
+            {[["github", CONFIG.github, "GitHub"], ["linkedin", CONFIG.linkedin, "LinkedIn"]].map(([n, h, l]) =>
+              h ? <a key={n} href={h} target="_blank" rel="noopener noreferrer" aria-label={l} className="rounded-lg border border-mute/30 p-2.5 text-mute hover:border-accent hover:text-accent"><Icon n={n} s={20} /></a>
+                : <span key={n} aria-label={l + " (link not added yet)"} title={l + " link not added yet"} className="cursor-not-allowed rounded-lg border border-mute/20 p-2.5 text-mute/50"><Icon n={n} s={20} /></span>)}
+          </div>
+        </div>
+        <div className="card scan float shadow-2xl shadow-black/40" aria-label="Profile card">
+          <div className="flex items-center gap-2 border-b border-mute/10 px-4 py-3">
+            <span className="h-2.5 w-2.5 rounded-full bg-mute/40" /><span className="h-2.5 w-2.5 rounded-full bg-mute/40" /><span className="h-2.5 w-2.5 rounded-full bg-mute/40" />
+            <span className="ml-2 font-mono text-xs text-mute">soyod@iium:~</span>
+          </div>
+          <div className="p-5">
+            <div className="flex items-center gap-4">
+              <div className="h-28 w-28 shrink-0 overflow-hidden rounded-full ring-2 ring-accent/60 ring-offset-4 ring-offset-panel">
+                <img src="profile image.jpeg" alt="Portrait of Soyod Ahmed in a suit and blue tie" width="224" height="224" className="h-full w-full object-cover" />
+              </div>
+              <div className="font-mono text-sm leading-7">
+                <div><span className="text-accent">$</span> whoami</div>
+                <div className="text-ink">soyod_ahmed</div>
+              </div>
+            </div>
+            <div className="mt-5 font-mono text-sm leading-7">
+              <div><span className="text-accent">$</span> cat focus.txt</div>
+              <div className="text-mute">IIUM · Year 3 · Cybersecurity</div>
+              <div className="mt-1"><span className="text-accent">$</span> role --now</div>
+              <div className="text-violet" aria-live="off">{typed}<span className="caret" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const About = () => (
+  <Section id="about" title="About me">
+    <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+      <div data-r className="max-w-2xl space-y-4 text-lg leading-relaxed text-mute">
+        <p>I am a third-year Bachelor of Information Technology (Honours) student at International Islamic University Malaysia (IIUM), specializing in Cybersecurity. My academic training bridges offensive and defensive security with modern software engineering—covering Cyber Risk Management, Business Continuity and Disaster Recovery, Control and Audit Core, Web Application Security, Information Privacy and Protection, Incident Handling and Response, Malware Analysis, Penetration Testing, AI/ML Engineering, and Web Development.</p>
+        <p>Python is my core programming language. On the backend, I build applications using Django and Django REST Framework, backed by SQL and PostgreSQL, while actively expanding my frontend skills in HTML, CSS, JavaScript, and React to craft complete end-to-end solutions.</p>
+        <p>My goal is to grow into a skilled Full Stack Developer and AI/ML Engineer who applies cybersecurity principles from day one to build resilient, secure-by-design applications.</p>
+      </div>
+      <div className="card h-fit p-6">
+        <h3 className="font-head text-lg font-bold">Quick facts</h3>
+        <dl className="mt-4 space-y-3 text-sm">
+          {[["University", "IIUM"], ["Level", "3rd year"], ["Specialization", "Cybersecurity"], ["Aiming for", "Junior / Full Stack Developer"], ["Interests", "Software development, cybersecurity, AI/ML"]].map(([k, v]) => (
+            <div key={k} className="flex justify-between gap-4 border-b border-mute/10 pb-2 last:border-0"><dt className="text-mute">{k}</dt><dd className="text-right">{v}</dd></div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  </Section>
+);
+
+const Skills = () => (
+  <Section id="skills" title="Technical skills" lead="Grouped by area. Items marked Learning are in progress.">
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {SKILLS.map(([cat, items]) => (
+        <div key={cat} className="card p-6">
+          <h3 className="font-head text-lg font-bold text-accent">{cat}</h3>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {items.map(s => <li key={s} className={"rounded-full border px-3 py-1 text-sm transition-colors hover:border-accent hover:bg-accent/10 " + (s.includes("Learning") ? "border-violet/40 text-violet" : "border-mute/25 text-ink")}>{s}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </Section>
+);
+
+const Projects = () => (
+  <Section id="projects" title="Projects" lead="These are project slots in progress. Repository and demo buttons turn on once real links are added.">
+    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {PROJECTS.map((p, i) => (
+        <article key={p.title} className={"card flex flex-col overflow-hidden " + (i === 0 ? "lg:col-span-2" : "")}>
+          <div className="flow relative flex h-40 items-center justify-center bg-gradient-to-br from-accent/15 via-bg to-violet/20 text-mute" role="img" aria-label={"Screenshot placeholder for " + p.title}>
+            <Icon n={i === 4 ? "shield" : "code"} s={34} />
+            <span className="absolute right-3 top-3 rounded-full border border-mute/30 bg-bg/80 px-2.5 py-0.5 text-xs">{p.status}</span>
+          </div>
+          <div className="flex flex-1 flex-col p-6">
+            <h3 className="font-head text-xl font-bold">{p.title}</h3>
+            <p className="mt-2 text-mute">{p.desc}</p>
+            {p.problem && (
+              <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
+                <div><dt className="font-medium text-accent">Problem</dt><dd className="text-mute">{p.problem}</dd></div>
+                <div><dt className="font-medium text-accent">Solution</dt><dd className="text-mute">{p.solution}</dd></div>
+                <div className="sm:col-span-2"><dt className="font-medium text-accent">Planned features</dt><dd className="text-mute">{(p.features || []).join(", ")}</dd></div>
+              </dl>
+            )}
+            <ul className="mt-4 flex flex-wrap gap-2">{p.tech.map(t => <li key={t} className="rounded-md bg-bg px-2.5 py-1 font-mono text-xs text-violet">{t}</li>)}</ul>
+            <div className="mt-auto flex flex-wrap gap-3 pt-6">
+              <Btn icon="github" href={p.github}>GitHub Repository</Btn>
+              <Btn primary href={p.demo}>Live Demo</Btn>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </Section>
+);
+
+const Education = () => (
+  <Section id="education" title="Education">
+    <div className="card max-w-2xl p-6">
+      <h3 className="font-head text-xl font-bold">International Islamic University Malaysia (IIUM)</h3>
+      <p className="mt-1 text-mute">Current level: 3rd year · Specialization: Cybersecurity</p>
+      <p className="mt-1 text-mute">Bachelor of Information Technology (Specialization in Cybersecurity)</p>
+      <p className="mt-1 text-sm text-mute/80">Expected graduation: 2027/2028 session</p>
+      <h4 className="mt-5 font-medium">Relevant study areas</h4>
+      <ul className="mt-3 flex flex-wrap gap-2">
+        {["Web Development", "AI/ML Engineering", "Cyber Risk Management", "Business Continuity and Disaster Recovery", "Ethical Hacking (Learning)", "Software Development"].map(a => <li key={a} className="rounded-full border border-accent/30 px-3 py-1 text-sm text-accent">{a}</li>)}
+      </ul>
+    </div>
+  </Section>
+);
+
+function Journey() {
+  const [steps, setSteps] = useState(STEPS);
+  const cycle = i => setSteps(steps.map((s, k) => k === i ? [s[0], ORDER[(ORDER.indexOf(s[1]) + 1) % 3]] : s));
+  return (
+    <Section id="journey" title="Learning journey" lead="My path to Full Stack Developer. Select a step to change its status.">
+      <ul data-r className="mb-6 flex flex-wrap gap-5 text-sm text-mute">
+        {ORDER.map(k => <li key={k} className="flex items-center gap-2"><span className={"h-2.5 w-2.5 rounded-full " + STATUS[k].dot} />{STATUS[k].label} ({steps.filter(s => s[1] === k).length})</li>)}
+      </ul>
+      <ol className="relative ml-3 space-y-3 border-l border-mute/20 pl-8">
+        {steps.map(([name, st], i) => (
+          <li key={name} className="relative">
+            <span className={"absolute -left-[41px] top-4 h-3 w-3 rounded-full ring-4 ring-bg " + STATUS[st].dot} aria-hidden="true">{st === "learning" && <span className="absolute inset-0 animate-ping rounded-full bg-violet/70" />}</span>
+            <button onClick={() => cycle(i)} className={"card flex w-full items-center justify-between gap-4 border-l-2 px-5 py-3.5 text-left " + STATUS[st].ring} aria-label={name + ": " + STATUS[st].label + ". Select to change status."}>
+              <span className="font-medium">{name}</span>
+              <span className="shrink-0 text-sm text-mute">{STATUS[st].label}</span>
+            </button>
+          </li>
+        ))}
+      </ol>
+      <p className="mt-4 text-sm text-mute/80">Status changes apply to this visit only. To make them permanent, edit STEPS in the code.</p>
+    </Section>
+  );
+}
+
+const Achievements = () => (
+  <Section id="achievements" title="Certifications & achievements" lead="Only verified items will be listed here.">
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {ACH.map((a, i) => (
+        <div key={i} className="card border-dashed p-6">
+          <span className="text-violet"><Icon n="award" s={22} /></span>
+          <h3 className="mt-3 font-head font-bold">{a.t}</h3>
+          <p className="mt-1 text-sm text-mute">{a.d}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+);
+
+function Contact() {
+  const [f, setF] = useState({ name: "", email: "", subject: "", message: "" });
+  const [msg, setMsg] = useState(null);
+  const [sending, setSending] = useState(false);
+  const on = k => e => setF({ ...f, [k]: e.target.value });
+  const submit = async e => {
+    e.preventDefault();
+    const ep = CONFIG.formEndpoint || "";
+    if (!/^https:\/\//i.test(ep) || ep.includes("YOUR_ENDPOINT_HERE")) return setMsg({ ok: false, t: "The contact form isn’t connected yet, so nothing was sent." });
+    setSending(true); setMsg(null);
+    try {
+      const r = await fetch(CONFIG.formEndpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ ...f, _subject: "Portfolio message: " + f.subject }) });
+      if (!r.ok) throw new Error();
+      setMsg({ ok: true, t: "Message sent. Thank you!" }); setF({ name: "", email: "", subject: "", message: "" });
+    } catch { setMsg({ ok: false, t: "The message couldn’t be sent. Please try again." }); }
+    setSending(false);
+  };
+  const field = "mt-1.5 w-full rounded-lg border border-mute/25 bg-bg px-3.5 py-2.5 text-ink placeholder:text-mute/50";
+  return (
+    <Section id="contact" title="Get in touch" lead="I’m always interested in connecting with developers, learning new technologies, and exploring opportunities in software development.">
+      <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
+        <ul className="space-y-3">
+          {[["mail", "Email", CONFIG.email, CONFIG.email && "mailto:" + CONFIG.email], ["linkedin", "LinkedIn", CONFIG.linkedin && "Profile", CONFIG.linkedin], ["github", "GitHub", CONFIG.github && "Profile", CONFIG.github]].map(([n, l, v, h]) => (
+            <li key={l} className="card flex items-center gap-4 p-4">
+              <span className="text-accent"><Icon n={n} s={22} /></span>
+              <div><div className="text-sm text-mute">{l}</div>
+                {h ? <a className="hover:text-accent" href={h} {...(l !== "Email" ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{v}</a> : <span className="text-mute/70">[Add your {l.toLowerCase()}]</span>}</div>
+            </li>
+          ))}
+        </ul>
+        <form onSubmit={submit} className="card !transform-none space-y-4 p-6" noValidate={false}>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="block text-sm">Name<input required className={field} value={f.name} onChange={on("name")} autoComplete="name" /></label>
+            <label className="block text-sm">Email<input required type="email" className={field} value={f.email} onChange={on("email")} autoComplete="email" /></label>
+          </div>
+          <label className="block text-sm">Subject<input required className={field} value={f.subject} onChange={on("subject")} /></label>
+          <label className="block text-sm">Message<textarea required rows="5" className={field} value={f.message} onChange={on("message")} /></label>
+          <div className="flex flex-wrap items-center gap-4">
+            <button type="submit" disabled={sending} className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-bg hover:bg-sky-300 disabled:cursor-wait disabled:opacity-60"><Icon n="send" s={16} />{sending ? "Sending…" : "Send message"}</button>
+            {msg && <p role="status" className={"text-sm " + (msg.ok ? "text-accent" : "text-violet")}>{msg.t}{!msg.ok && CONFIG.email && <> You can <a className="underline hover:text-accent" href={"mailto:" + CONFIG.email}>email me directly</a>.</>}</p>}
+          </div>
+        </form>
+      </div>
+    </Section>
+  );
+}
+
+/* ================= ADMIN PANEL ================= */
+let ADMIN_ART = null, ADMIN_DB = null;
+const ADMIN_HASH = "1ee7e14ccc8d28cc0356e41996220140976952eb65dff986bc4ebb8f26b3d858";
+const csv = s => s.split(",").map(t => t.trim()).filter(Boolean);
+const url = v => (/^https?:\/\//i.test(v.trim()) ? v.trim() : "");
+const INP = "mt-1 w-full rounded-md border border-mute/25 bg-bg px-3 py-2 text-sm text-ink";
+const BT = "rounded-md border border-mute/25 px-2 py-1 text-xs text-mute hover:border-accent hover:text-accent disabled:opacity-30";
+
+function buildHtml(data) {
+  const head = Array.from(document.head.querySelectorAll('meta[charset],meta[name],meta[property],title,link[href^="https://fonts."],script[src^="https://cdn.tailwindcss.com"],style#base-css,script#tw-config')).map(el => el.outerHTML);
+  const libs = Array.from(document.querySelectorAll('script[src^="https://cdnjs.cloudflare.com/ajax/libs/"]')).map(el => el.outerHTML);
+  const app = document.getElementById("app-src").outerHTML;
+  const json = JSON.stringify(data).replace(/</g, "\\u003c");
+  return "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n" + Array.from(new Set(head)).join("\n") + "\n</head>\n<body>\n<div id=\"root\"></div>\n<script id=\"site-data\" type=\"application/json\">" + json + "</" + "script>\n" + libs.join("\n") + "\n" + app + "\n</body>\n</html>";
+}
+
+const Fld = ({ label, v, on, area }) => (
+  <label className="mt-3 block text-xs text-mute">{label}
+    {area
+      ? <textarea key={v} rows="3" defaultValue={v} className={INP} onBlur={e => e.target.value !== v && on(e.target.value)} />
+      : <input key={v} defaultValue={v} className={INP} onBlur={e => e.target.value !== v && on(e.target.value)} />}
+  </label>
+);
+
+const Row = ({ title, i, n, mv, del, children }) => {
+  const [sure, setSure] = useState(false);
+  return (
+    <details className="mb-3 rounded-lg border border-mute/20 bg-bg/60 p-3">
+      <summary className="flex cursor-pointer items-center justify-between gap-2 text-sm font-medium">
+        <span className="truncate">{title || "(untitled)"}</span>
+        <span className="flex shrink-0 gap-1" onClick={e => e.preventDefault()}>
+          <button type="button" className={BT} disabled={i === 0} onClick={() => mv(-1)} aria-label="Move up">Up</button>
+          <button type="button" className={BT} disabled={i === n - 1} onClick={() => mv(1)} aria-label="Move down">Down</button>
+          <button type="button" className={BT} onClick={() => (sure ? del() : setSure(true))} onBlur={() => setSure(false)}>{sure ? "Sure?" : "Delete"}</button>
+        </span>
+      </summary>
+      {children}
+    </details>
+  );
+};
+
+const List = ({ d, mut, get, blank, label, addText, render }) => (
+  <div>
+    {get(d).map((x, i) => (
+      <Row key={i} i={i} n={get(d).length} title={label(x)}
+        mv={k => mut(c => { const a = get(c), j = i + k; if (a[j]) { const t = a[i]; a[i] = a[j]; a[j] = t; } })}
+        del={() => mut(c => { get(c).splice(i, 1); }, "Deleted: " + label(x))}>{render(x, i)}</Row>
+    ))}
+    <button type="button" className={BT + " px-3 py-2 text-sm"} onClick={() => mut(c => { get(c).push(blank()); }, addText)}>{addText}</button>
+  </div>
+);
+
+const TABS = [["projects", "Projects"], ["skills", "Skills"], ["journey", "Journey"], ["ach", "Achievements"], ["links", "Links"], ["log", "Activity"]];
+
+function Admin({ onClose, onChange }) {
+  const snap = () => ({ config: CONFIG, projects: PROJECTS, skills: SKILLS, steps: STEPS, ach: ACH });
+  const [d, setD] = useState(() => JSON.parse(JSON.stringify(snap())));
+  const [gate, setGate] = useState("checking");
+  const [tab, setTab] = useState("projects");
+  const [msg, setMsg] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [authed, setAuthed] = useState(() => { try { return sessionStorage.getItem("adm") === "1"; } catch (e) { return false; } });
+  const [lf, setLf] = useState({ u: "", p: "" });
+  const [lerr, setLerr] = useState("");
+  const [fails, setFails] = useState(0);
+  const [lockUntil, setLockUntil] = useState(0);
+  const logRef = React.useRef([]);
+  const timer = React.useRef(null);
+  const [log, setLog] = useState([]);
+  const [saved, setSaved] = useState(null);
+  const [dbNote, setDbNote] = useState("");
+  const login = async e => {
+    e.preventDefault();
+    if (Date.now() < lockUntil) return setLerr("Too many attempts. Wait 30 seconds and try again.");
+    try {
+      const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(lf.u.trim() + ":" + lf.p));
+      const hex = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+      if (hex === ADMIN_HASH) { try { sessionStorage.setItem("adm", "1"); } catch (x) {} setAuthed(true); setLerr(""); setFails(0); }
+      else {
+        const n = fails + 1;
+        if (n >= 5) { setLockUntil(Date.now() + 30000); setFails(0); setLerr("Too many attempts. Wait 30 seconds and try again."); }
+        else { setFails(n); setLerr("Wrong username or password."); }
+      }
+    } catch (x) { setLerr("Sign-in isn’t available in this browser context."); }
+  };
+
+  const check = async () => {
+    setGate("checking");
+    try {
+      const c = window.claude;
+      const u = c && await c.use("user");
+      const a = c && await c.use("artifact");
+      const ok = u && a && ((await u.isOwner()) || (await u.canEdit()));
+      ADMIN_ART = a;
+      if (ok) {
+        try {
+          const dbn = await c.use("db"); const uid = await u.id();
+          ADMIN_DB = dbn && uid ? dbn.collection("data/users/" + uid) : null;
+          if (ADMIN_DB) { const s = await ADMIN_DB.doc("state").get(); if (s.exists) { const v = s.data(); logRef.current = v.log || []; setLog(logRef.current); setSaved(v); } }
+          else setDbNote("Database unavailable: drafts aren’t saved.");
+        } catch (e) { ADMIN_DB = null; setDbNote("Database unavailable: drafts aren’t saved."); }
+      }
+      setGate(ok ? "ok" : "denied");
+    } catch (e) { setGate("denied"); }
+  };
+  useEffect(() => { check(); }, []);
+
+  const persist = (n, label, now) => {
+    logRef.current = [{ t: Date.now(), s: label }, ...logRef.current].slice(0, 60);
+    setLog(logRef.current);
+    if (!ADMIN_DB) return Promise.resolve();
+    const save = async () => {
+      try { await ADMIN_DB.doc("state").set({ draft: JSON.stringify(n), log: logRef.current, savedAt: Date.now() }); setDbNote("Saved to database at " + new Date().toLocaleTimeString()); }
+      catch (e) { setDbNote("Couldn’t save to the database."); }
+    };
+    clearTimeout(timer.current);
+    if (now) return save();
+    setDbNote("Saving…");
+    timer.current = setTimeout(save, 1200);
+    return Promise.resolve();
+  };
+  const mut = (fn, label) => {
+    const n = JSON.parse(JSON.stringify(d));
+    fn(n); setD(n);
+    CONFIG = n.config; PROJECTS = n.projects; SKILLS = n.skills; STEPS = n.steps; ACH = n.ach;
+    onChange(); persist(n, label || "Edited " + tab);
+  };
+  const publish = async () => {
+    setBusy(true); setMsg("");
+    try { await persist(d, "Published changes", true); await ADMIN_ART.publish(buildHtml(d)); setMsg("Published. Reloading the page…"); }
+    catch (e) {
+      const m = { conflict: "A newer version was published, so the page is reloading.", not_writer: "This account can’t edit the page.", not_granted: "This account can’t edit the page.", too_large: "The page is too large to save.", rate_limited: "You’re saving too often. Wait a moment and try again." };
+      setMsg(m[e && e.code] || "Couldn’t publish. Your edits are still here; try again."); setBusy(false);
+    }
+  };
+
+  const P = (i, k, f) => v => mut(c => { c.projects[i][k] = f ? f(v) : v; });
+  const lim = { disabled: "", };
+  const cfg = (k, label, f) => <Fld key={k} label={label} v={d.config[k] || ""} on={v => mut(c => { c.config[k] = f ? f(v) : v.trim(); })} />;
+
+  return (
+    <div className="fixed inset-0 z-50 flex justify-end bg-black/60" role="dialog" aria-modal="true" aria-label="Admin panel" style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}>
+      <div className="flex h-full w-full max-w-xl flex-col border-l border-mute/20 bg-panel" style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}>
+        <div className="flex items-center justify-between border-b border-mute/15 px-5 py-4">
+          <h2 className="font-head text-lg font-bold">Admin panel</h2>
+          <span className="flex gap-2">
+            {authed && gate === "ok" && <button type="button" className={BT} onClick={() => { try { sessionStorage.removeItem("adm"); } catch (x) {} setAuthed(false); setLf({ u: "", p: "" }); }}>Log out</button>}
+            <button type="button" className={BT} onClick={onClose}>Close</button>
+          </span>
+        </div>
+
+        {gate === "checking" && <p className="p-5 text-mute">Checking your sign-in…</p>}
+
+        {gate === "denied" && (
+          <div className="p-5 text-sm leading-relaxed text-mute">
+            <h3 className="font-head text-base font-bold text-ink">Admin sign-in required</h3>
+            <p className="mt-2">Only the owner of this portfolio can edit it. Sign in to Claude with the owner account, open this page from your Claude artifacts, then check again.</p>
+            <button type="button" className={BT + " mt-4 px-3 py-2 text-sm"} onClick={check}>Check again</button>
+          </div>
+        )}
+
+        {gate === "ok" && !authed && (
+          <form onSubmit={login} className="p-5">
+            <h3 className="font-head text-base font-bold">Admin login</h3>
+            <label className="mt-4 block text-xs text-mute">Username<input className={INP} autoComplete="username" value={lf.u} onChange={e => setLf({ ...lf, u: e.target.value })} /></label>
+            <label className="mt-3 block text-xs text-mute">Password<input type="password" className={INP} autoComplete="current-password" value={lf.p} onChange={e => setLf({ ...lf, p: e.target.value })} /></label>
+            {lerr && <p role="alert" className="mt-3 text-sm text-violet">{lerr}</p>}
+            <button type="submit" className="mt-4 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-bg hover:bg-sky-300">Log in</button>
+          </form>
+        )}
+
+        {gate === "ok" && authed && (
+          <>
+            {saved && saved.draft && saved.draft !== JSON.stringify(snap()) && (
+              <div className="flex flex-wrap items-center gap-3 border-b border-mute/15 bg-bg/60 px-5 py-3 text-sm">
+                <span className="text-mute">Unpublished draft from {new Date(saved.savedAt).toLocaleString()}</span>
+                <button type="button" className={BT} onClick={() => { const n = JSON.parse(saved.draft); setD(n); CONFIG = n.config; PROJECTS = n.projects; SKILLS = n.skills; STEPS = n.steps; ACH = n.ach; onChange(); setSaved(null); }}>Restore</button>
+                <button type="button" className={BT} onClick={() => setSaved(null)}>Discard</button>
+              </div>
+            )}
+            <div className="flex flex-wrap gap-2 border-b border-mute/15 px-5 py-3" role="tablist">
+              {TABS.map(([k, l]) => <button key={k} type="button" role="tab" aria-selected={tab === k} onClick={() => setTab(k)} className={"rounded-md px-3 py-1.5 text-sm " + (tab === k ? "bg-accent text-bg" : "border border-mute/25 text-mute hover:text-accent")}>{l}</button>)}
+            </div>
+            <div className="flex-1 overflow-y-auto px-5 py-4">
+              {tab === "projects" && <List d={d} mut={mut} get={c => c.projects} label={x => x.title} addText="Add project"
+                blank={() => ({ title: "New project", status: "In progress", desc: "", tech: [], github: "", demo: "" })}
+                render={(x, i) => (<>
+                  <Fld label="Title" v={x.title} on={P(i, "title")} />
+                  <Fld label="Status (for example In progress, Completed, Planned)" v={x.status} on={P(i, "status")} />
+                  <Fld label="Description" area v={x.desc} on={P(i, "desc")} />
+                  <Fld label="Technologies (comma separated)" v={x.tech.join(", ")} on={P(i, "tech", csv)} />
+                  <Fld label="GitHub repository URL (https://…)" v={x.github} on={P(i, "github", url)} />
+                  <Fld label="Live demo URL (https://…)" v={x.demo} on={P(i, "demo", url)} />
+                  <Fld label="Problem (optional)" area v={x.problem || ""} on={P(i, "problem")} />
+                  <Fld label="Solution (optional)" area v={x.solution || ""} on={P(i, "solution")} />
+                  <Fld label="Key features (comma separated, optional)" v={(x.features || []).join(", ")} on={P(i, "features", csv)} />
+                </>)} />}
+
+              {tab === "skills" && <List d={d} mut={mut} get={c => c.skills} label={x => x[0]} addText="Add skill category"
+                blank={() => ["New category", []]}
+                render={(x, i) => (<>
+                  <Fld label="Category name" v={x[0]} on={v => mut(c => { c.skills[i][0] = v; })} />
+                  <Fld label="Skills (comma separated; add “(Learning)” for in-progress)" area v={x[1].join(", ")} on={v => mut(c => { c.skills[i][1] = csv(v); })} />
+                </>)} />}
+
+              {tab === "journey" && <List d={d} mut={mut} get={c => c.steps} label={x => x[0] + " · " + x[1]} addText="Add step"
+                blank={() => ["New step", "planned"]}
+                render={(x, i) => (<>
+                  <Fld label="Step" v={x[0]} on={v => mut(c => { c.steps[i][0] = v; })} />
+                  <label className="mt-3 block text-xs text-mute">Status
+                    <select key={x[1]} defaultValue={x[1]} className={INP} onChange={e => mut(c => { c.steps[i][1] = e.target.value; })}>
+                      <option value="completed">Completed</option><option value="learning">Learning</option><option value="planned">Planned</option>
+                    </select>
+                  </label>
+                </>)} />}
+
+              {tab === "ach" && <List d={d} mut={mut} get={c => c.ach} label={x => x.t} addText="Add achievement"
+                blank={() => ({ t: "New achievement", d: "" })}
+                render={(x, i) => (<>
+                  <Fld label="Title" v={x.t} on={v => mut(c => { c.ach[i].t = v; })} />
+                  <Fld label="Details (issuer, year, verified info)" area v={x.d} on={v => mut(c => { c.ach[i].d = v; })} />
+                </>)} />}
+
+              {tab === "log" && (log.length ? <ul className="space-y-2 text-sm">{log.map((x, i) => <li key={i} className="flex justify-between gap-4 border-b border-mute/10 pb-2"><span>{x.s}</span><span className="shrink-0 text-mute">{new Date(x.t).toLocaleString()}</span></li>)}</ul> : <p className="text-sm text-mute">No activity yet. Your edits are logged here.</p>)}
+
+              {tab === "links" && <div>
+                {cfg("github", "GitHub profile URL", url)}
+                {cfg("linkedin", "LinkedIn profile URL", url)}
+                {cfg("email", "Email address")}
+                {cfg("cv", "CV link (https://… or /_blob/…)", v => (/^(https?:\/\/|\/)/i.test(v.trim()) ? v.trim() : ""))}
+                {cfg("formEndpoint", "Contact form endpoint (optional, for example Formspree)", url)}
+              </div>}
+            </div>
+            <div className="border-t border-mute/15 px-5 py-4">
+              <div className="flex flex-wrap items-center gap-3">
+                <button type="button" disabled={busy} onClick={publish} className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-bg hover:bg-sky-300 disabled:opacity-50">{busy ? "Publishing…" : "Publish changes"}</button>
+                {msg && <p role="status" className="text-sm text-violet">{msg}</p>}
+              </div>
+              <p className="mt-2 text-xs text-mute/80">Edits preview right away and autosave as a private draft in the database. Publish makes them live for every visitor.</p>
+              {dbNote && <p className="mt-1 text-xs text-accent">{dbNote}</p>}
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [ver, setVer] = useState(0);
+  const [admin, setAdmin] = useState(false);
+  const [top, setTop] = useState(false);
+  useEffect(() => { if (location.hash === "#admin") setAdmin(true); }, []);
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const root = document.documentElement;
+    const bar = document.getElementById("bar");
+    const onScroll = () => { setTop(scrollY > 600); const h = root.scrollHeight - innerHeight; if (bar) bar.style.transform = "scaleX(" + (h > 0 ? Math.min(scrollY / h, 1) : 0) + ")"; };
+    const onMove = e => { root.style.setProperty("--gx", e.clientX + "px"); root.style.setProperty("--gy", e.clientY + "px"); const c = e.target.closest && e.target.closest(".card"); if (c) { const r = c.getBoundingClientRect(); c.style.setProperty("--mx", e.clientX - r.left + "px"); c.style.setProperty("--my", e.clientY - r.top + "px"); } };
+    addEventListener("scroll", onScroll, { passive: true }); addEventListener("mousemove", onMove); onScroll();
+    let io;
+    if (!reduce && "IntersectionObserver" in window) {
+      root.classList.add("anim");
+      io = new IntersectionObserver(es => es.forEach(en => {
+        if (!en.isIntersecting) return;
+        const el = en.target, i = Array.from(el.parentElement.children).indexOf(el);
+        el.style.transitionDelay = Math.min(i, 6) * 70 + "ms";
+        el.setAttribute("data-in", "");
+        setTimeout(() => { el.style.transitionDelay = ""; }, 1000);
+        io.unobserve(el);
+      }), { threshold: 0.1 });
+      document.querySelectorAll("[data-r]:not([data-in]), .card:not([data-in])").forEach(el => io.observe(el));
+    }
+    return () => { removeEventListener("scroll", onScroll); removeEventListener("mousemove", onMove); io && io.disconnect(); };
+  }, [ver]);
+  return (
+  <>
+    <a href="#about" className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded focus:bg-accent focus:px-3 focus:py-2 focus:text-bg">Skip to content</a>
+    <Nav />
+    <main><Hero /><Marquee /><About /><Skills /><Projects /><Education /><Journey key={ver} /><Achievements /><Contact /></main>
+    <footer className="border-t border-mute/10 py-8 text-center text-sm text-mute">© 2026 Soyod Ahmed · Built with React and Tailwind CSS<div><button type="button" onClick={() => setAdmin(true)} className="mt-3 text-xs text-mute/60 hover:text-accent">Admin login</button></div></footer>
+    {admin && <Admin onClose={() => setAdmin(false)} onChange={() => setVer(v => v + 1)} />}
+    <div className="cursor-glow" aria-hidden="true" />
+    <a href="#top" aria-label="Back to top" className={"fixed bottom-5 right-5 z-30 rounded-full border border-mute/30 bg-panel/90 p-3 text-accent backdrop-blur transition-all duration-300 hover:border-accent " + (top ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0")}><Icon n="up" /></a>
+  </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
